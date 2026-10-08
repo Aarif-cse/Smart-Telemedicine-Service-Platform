@@ -34,6 +34,6 @@ python rotation_demo.py   # one AVL rotation step by step
 
 ## Repository Contents
 - [`src/`](src) - source code and demos
-- [`docs/`](docs) - problem statement, concept mapping, [data structure decisions](docs/data-structure-decisions.md), [graph design](docs/graph-design.md)
+- [`docs/`](docs) - problem statement, concept mapping, [data structure decisions](docs/report_2/data-structure-decisions.md), [graph design](docs/report_2/graph-design.md)
 - [`research/`](research) - research papers referred to
 - [`screenshots/`](screenshots) - output screenshots for Review 2
