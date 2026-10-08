@@ -1,25 +1,39 @@
 # Smart Telemedicine Service Platform
 
-
+| | |
+|---|---|
 | **Course** | Data Structure and Algorithms - II (CCSE0301) |
-
 | **Faculty** | Mr. Shamshad Ali |
-
 | **Student** | Aarif Ansari (Roll No. 2501330100002), B.Tech CSE-A |
-
 | **Type** | Individual PBL Assignment |
-
 | **SDG** | SDG 3 - Good Health and Well-Being |
 
 ## About
-A telemedicine platform idea that manages patients, doctors, appointments, prescriptions and consultation history using Trees and Graphs.
+A prototype for a telemedicine platform that manages patients, doctors, appointments and their relationships using Trees, Heaps and Graphs. Only dummy data is used.
 
-## Current Status (Review 1 / Month 1)
-Problem understanding and concept study are complete. **No implementation has been done yet.** Implementation is planned for later reviews.
+## Current Status
+- **Review 1 (Month 1):** Problem understanding and concept study.
+- **Review 2 (Month 2):** Core data structures designed and implemented in Python, with a small demo.
+- **Next:** Integration into one flow, record deletion, larger test data and complexity analysis.
 
-## Contents
-- [Problem and Objectives](docs/problem-and-objectives.md)
-- [DSA Concepts Mapping](docs/dsa-concepts-mapping.md)
-- [Conceptual Design](docs/conceptual-design.md)
-- [Plan for Next Review](docs/next-review-plan.md)
-- [Research Papers](research/README.md)
+## Data Structures Used
+| Requirement | Structure | File |
+|---|---|---|
+| Patient and doctor records by ID | AVL tree | `src/avl_tree.py` |
+| Appointments by priority | Max-heap (priority queue) | `src/appointment_heap.py` |
+| Patient-doctor-hospital relationships | Graph (adjacency list), BFS, DFS | `src/graph.py` |
+
+## How to Run
+Requires Python 3. No external libraries are needed.
+
+```bash
+cd src
+python demo.py            # AVL tree, heap, graph and a combined booking flow
+python rotation_demo.py   # one AVL rotation step by step
+```
+
+## Repository Contents
+- [`src/`](src) - source code and demos
+- [`docs/`](docs) - problem statement, concept mapping, [data structure decisions](docs/data-structure-decisions.md), [graph design](docs/graph-design.md)
+- [`research/`](research) - research papers referred to
+- [`screenshots/`](screenshots) - output screenshots for Review 2
