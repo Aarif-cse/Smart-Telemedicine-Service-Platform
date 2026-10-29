@@ -2,7 +2,7 @@
 
 An AVL tree is a BST that keeps itself balanced: for every node, the heights
 of the left and right subtrees differ by at most 1. Because of this the height
-stays O(log n), so search / insert take O(log n) even if IDs arrive in sorted order.
+stays O(log n), so search / insert / delete take O(log n) even if IDs arrive in sorted order.
 """
 
 
@@ -103,6 +103,34 @@ class AVLTree:
                 return node.data
             node = node.left if key < node.key else node.right
         return None
+
+    # ---------- delete ----------
+    def delete(self, key):
+        """Remove the record with this key and rebalance. Returns True if it was found. O(log n)."""
+        before = self.size
+        self.root = self._delete(self.root, key)
+        return self.size < before
+
+    def _delete(self, node, key):
+        if node is None:
+            return None                          # key not found: nothing to remove
+        if key < node.key:
+            node.left = self._delete(node.left, key)
+        elif key > node.key:
+            node.right = self._delete(node.right, key)
+        else:
+            if node.left is None:                # no left child: replace by right child
+                self.size -= 1
+                return node.right
+            if node.right is None:               # no right child: replace by left child
+                self.size -= 1
+                return node.left
+            successor = node.right               # two children: use the in-order successor
+            while successor.left:                # (smallest key in the right subtree)
+                successor = successor.left
+            node.key, node.data = successor.key, successor.data
+            node.right = self._delete(node.right, successor.key)
+        return self._rebalance(node)             # fix balance on the way back up
 
     # ---------- traversal ----------
     def inorder(self):
