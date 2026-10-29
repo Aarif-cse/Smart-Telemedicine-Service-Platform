@@ -1,6 +1,6 @@
 # Graph Design
 
-This document describes the graph used to represent patient-doctor-hospital relationships. The example below is the same dummy data built in `src/demo.py`, and it is implemented in `src/graph.py`.
+This document describes the graph used to represent patient-doctor-hospital relationships. The example below is the same dummy data built in `src/main.py`, and it is implemented in `src/graph.py`.
 
 ## Nodes and edges
 
