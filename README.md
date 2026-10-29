@@ -9,31 +9,36 @@
 | **SDG** | SDG 3 - Good Health and Well-Being |
 
 ## About
-A prototype for a telemedicine platform that manages patients, doctors, appointments and their relationships using Trees, Heaps and Graphs. Only dummy data is used.
+A prototype for a telemedicine platform that uses Trees, Heaps, Graphs and Dynamic Programming to manage patients, doctors, appointments and their relationships. Only dummy data is used.
 
-## Current Status
-- **Review 1 (Month 1):** Problem understanding and concept study.
-- **Review 2 (Month 2):** Core data structures designed and implemented in Python, with a small demo.
-- **Next:** Integration into one flow, record deletion, larger test data and complexity analysis.
+## Status
+- **Review 1:** Problem understanding and concept study.
+- **Review 2:** AVL tree, heap and graph (BFS/DFS) implemented with a demo.
+- **Final:** Added AVL deletion, Dynamic Programming (knapsack, resource allocation), Dijkstra, 19 automated tests and a larger-data benchmark.
 
-## Data Structures Used
-| Requirement | Structure | File |
+## What is implemented
+| Requirement | Structure / algorithm | File |
 |---|---|---|
-| Patient and doctor records by ID | AVL tree | `src/avl_tree.py` |
+| Patient and doctor records by ID | AVL tree (insert, search, in-order, delete) | `src/avl_tree.py` |
 | Appointments by priority | Max-heap (priority queue) | `src/appointment_heap.py` |
 | Patient-doctor-hospital relationships | Graph (adjacency list), BFS, DFS | `src/graph.py` |
+| Appointments within a doctor's time; slot sharing | Dynamic Programming | `src/dp_scheduling.py` |
+| Nearest hospital | Dijkstra's algorithm | `src/weighted_graph.py` |
 
-## How to Run
+## How to run
 Requires Python 3. No external libraries are needed.
 
 ```bash
 cd src
-python demo.py            # AVL tree, heap, graph and a combined booking flow
-python rotation_demo.py   # one AVL rotation step by step
+python main.py             # AVL tree, heap, graph and a combined booking flow
+python main_extended.py    # AVL deletion, Dynamic Programming and Dijkstra
+python avl_rotation.py     # one AVL rotation step by step
+python -m unittest test_all -v   # 19 automated tests
+python benchmark.py        # larger-data test
 ```
 
-## Repository Contents
-- [`src/`](src) - source code and demos
-- [`docs/`](docs) - problem statement, concept mapping, [data structure decisions](docs/report_2/data-structure-decisions.md), [graph design](docs/report_2/graph-design.md)
+## Repository contents
+- [`src/`](src) - source code, programs and tests
+- [`docs/`](docs) - problem statement, concept mapping, [data structure decisions](docs/data-structure-decisions.md), [graph design](docs/graph-design.md)
 - [`research/`](research) - research papers referred to
-- [`screenshots/`](screenshots) - output screenshots for Review 2
+- [`screenshots/`](screenshots) - output screenshots
